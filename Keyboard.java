@@ -1,14 +1,13 @@
-import java.util.Scanner;
 
 public class Keyboard implements Comparable<Keyboard> {
     String name;
-    Double price;
+    Float price;
     String color;
     boolean light;
     int amount;
     String keyType;
 
-    Keyboard(String name, Double price, String color, boolean light, int amount, String keyType) {
+    Keyboard(String name, Float price, String color, boolean light, int amount, String keyType) {
         this.name = name;
         this.price = price;
         this.color = color;
@@ -21,7 +20,7 @@ public class Keyboard implements Comparable<Keyboard> {
         return name;
     }
 
-    public Double getPrice() {
+    public Float getPrice() {
         return price;
     }
 
@@ -43,17 +42,16 @@ public class Keyboard implements Comparable<Keyboard> {
 
     @Override
     public String toString() {
-        return "Keyboard{" +
-                "name='" + name + '\'' +
-                ", price=" + price +
-                ", color='" + color + '\'' +
-                ", light=" + light +
-                ", amount=" + amount +
-                '}';
+        return "\nKeyboard: " + name +
+                ", price: " + price +
+                ", color: " + color +
+                ", light: " + light +
+                ", amount: " + amount +
+                ", keyType: " + keyType;
     }
 
     @Override
     public int compareTo(Keyboard o) {
-        return price.compareTo(o.getPrice());
+        return name.compareTo(o.getName());
     }
 }
