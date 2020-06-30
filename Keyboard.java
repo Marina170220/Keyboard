@@ -1,5 +1,6 @@
+import java.util.List;
 
-public class Keyboard implements Comparable<Keyboard> {
+public class Keyboard {
     String name;
     Float price;
     String color;
@@ -49,9 +50,26 @@ public class Keyboard implements Comparable<Keyboard> {
                 ", amount: " + amount +
                 ", keyType: " + keyType;
     }
-
-    @Override
-    public int compareTo(Keyboard o) {
-        return name.compareTo(o.getName());
+    public static void sortKeyboards (List<Keyboard> list){
+            int increment = list.size() / 2;
+            while (increment > 0) {
+                for (int i = 0; i < list.size() - increment; i++) {
+                    int j = i;
+                    while ((j >= 0) && ((list.get(j).getPrice()) > list.get(j + increment).getPrice())) {
+                        Keyboard temp = list.get(j);
+                        list.set(j, list.get(j + increment));
+                        list.set(j + increment, temp);
+                        j--;
+                    }
+                }
+                increment /= 2;
+            }
+            System.out.println(list);
+        }
     }
-}
+
+//    @Override
+//    public int compareTo(Keyboard o) {
+//        return name.compareTo(o.getName());
+//    }
+
