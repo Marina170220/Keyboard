@@ -25,7 +25,7 @@ public class Main {
         Manager manager = new Manager();
         String parameterEnteredByUser;
         Float cost = 0.0F;
-List<Float> prices = new ArrayList<>();
+        //List<Float> prices = new ArrayList<>();
 
         list.add(new Keyboard("A4tech", 3200.5F, "black", false, 10, "Membrane"));
         list.add(new Keyboard("Genius", 5800.00F, "silver", false, 5, "Scissor"));
@@ -38,15 +38,16 @@ List<Float> prices = new ArrayList<>();
         list.add(new Keyboard("Genius", 6350.0F, "silver", false, 7, "Mechanical"));
         list.add(new Keyboard("Lenovo", 1170.0F, "black", false, 15, "Mechanical"));
 
-        for (Keyboard k: list){
-            prices.add(k.getPrice());
-        }
-        System.out.println(prices);
-        manager.shellSort(prices);
+//        for (Keyboard k: list){
+//            prices.add(k.getPrice());
+//        }
+//        System.out.println(prices);
+//        manager.shellSort(prices);
 
 
-        Collections.sort(list);
-        System.out.println(list);
+//        Collections.sort(list);
+////        System.out.println(list);
+        Keyboard.sortKeyboards(list);
         for (Keyboard k : list) {
             cost += manager.findOneItemCost(k);
         }
